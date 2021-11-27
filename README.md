@@ -1,5 +1,6 @@
 # React Mobx Examples
 
+[![Coverage Status](https://coveralls.io/repos/github/Bukovski/react-mobx-examples/badge.svg?branch=main)](https://coveralls.io/github/Bukovski/react-mobx-examples?branch=main)
 
 These are the sample code for `mobx 6`.
 If my work is useful to you, I will be glad.
