@@ -15,6 +15,7 @@ counterState.decrement = function() {
 };
 
 
+
 export const Counter = observer((props) => {
 	const handleIncrement = () => { props.store.increment() };
 	const handleDecrement = () => { props.store.decrement() };
