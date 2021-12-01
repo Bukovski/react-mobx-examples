@@ -4,6 +4,7 @@ import { configure } from 'mobx';
 import { Counter, counterState } from "./Counter";
 import { NameCounter, nameStore } from "./NameCounter";
 import { appStore, Controls, TableControls } from "./TableControlsAsync";
+import { AnimalCounter, giraffe } from "./AnimalAutorun";
 
 
 configure({ enforceActions: 'observed' });
@@ -19,6 +20,10 @@ const App = () => {
       
       <Controls store={ appStore } />
       <TableControls store={ appStore } />
+      
+      <hr/>
+  
+      <AnimalCounter animalStore={ giraffe }/>
     </div>
   );
 }
