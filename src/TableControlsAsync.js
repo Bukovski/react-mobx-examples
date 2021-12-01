@@ -1,5 +1,5 @@
 import React from 'react';
-import { action, computed, observable, makeObservable, runInAction } from 'mobx';
+import { action, computed, observable, makeObservable, runInAction, flow } from 'mobx';
 import { observer } from "mobx-react";
 
 
@@ -26,6 +26,7 @@ class Store {
 			addDeveloper: action,
 			updateFilter: action,
 			getUser: action.bound,
+			getUserFlow: flow
 		})
 	}
 	
@@ -79,6 +80,22 @@ class Store {
 					})
 				}
 			})
+	}
+	
+	*getUserFlow() {
+		const response = yield fetch('https://randomuser.me/api/')
+		const json = yield response.json()
+		
+		if(json.results) {
+			const { name, login, dob } = json.results[ 0 ]
+			const fetchUser = { id: login.uuid, name: name.first, sp: dob.age  };
+			
+			// this.addDeveloper(fetchUser) // ок работает
+			
+			runInAction(() => { // ок. Если не хотим выносить логику в отдельный action то используем встроенный runInAction
+				this.devsList.push(fetchUser);
+			})
+		}
 	}
 }
 
@@ -152,6 +169,7 @@ export const Controls = observer((props) => {
 			<button onClick={ clearList }>Clear table</button>
 			<button onClick={ addDeveloper }>Add record</button>
 			<button onClick={ props.store.getUser }>Get User Async</button>
+			<button onClick={ () => props.store.getUserFlow() }>Get User Flow</button>
 			<input value={ props.store.filter } onChange={ filterDevelopers } />
 		</div>
 	);
