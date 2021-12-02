@@ -8,6 +8,7 @@ import { appStore, Controls, TableControls } from "./TableControlsAsync";
 import { AnimalCounter, giraffe } from "./AnimalAutorun";
 import { BooksContainer, booksStore } from "./BookInject";
 import { Birds, singletonBird } from "./BirdInject";
+import { Home, store, StoreProvider, Username } from "./StoreContext";
 
 
 configure({ enforceActions: 'observed' });
@@ -40,6 +41,11 @@ const App = () => {
         
         <Birds />
       </Provider>
+  
+      <StoreProvider store={ store }>
+        <Home />
+        <Username />
+      </StoreProvider>
     </div>
   );
 }
