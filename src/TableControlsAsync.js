@@ -65,6 +65,11 @@ class Store {
 		this.filter = value;
 	}
 	
+	reset() {
+		this.clearList();
+		this.filter = '';
+	}
+	
 	getUser() {
 		fetch('https://randomuser.me/api/')
 			.then(res => res.json())

@@ -44,6 +44,9 @@ const App = () => {
   
       <StoreProvider store={ store }>
         <Home />
+  
+        <hr/>
+  
         <Username />
       </StoreProvider>
     </div>
