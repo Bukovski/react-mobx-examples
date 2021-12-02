@@ -1,10 +1,13 @@
 import React from 'react';
 import { configure } from 'mobx';
+import { Provider } from "mobx-react";
 
 import { Counter, counterState } from "./Counter";
 import { NameCounter, nameStore } from "./NameCounter";
 import { appStore, Controls, TableControls } from "./TableControlsAsync";
 import { AnimalCounter, giraffe } from "./AnimalAutorun";
+import { BooksContainer, booksStore } from "./BookInject";
+import { Birds, singletonBird } from "./BirdInject";
 
 
 configure({ enforceActions: 'observed' });
@@ -24,6 +27,19 @@ const App = () => {
       <hr/>
   
       <AnimalCounter animalStore={ giraffe }/>
+      
+      <hr/>
+  
+      <Provider
+        booksStore={ booksStore }
+        BirdStore={ singletonBird } color={ "orange" }
+      >
+        <BooksContainer />
+        
+        <hr/>
+        
+        <Birds />
+      </Provider>
     </div>
   );
 }
