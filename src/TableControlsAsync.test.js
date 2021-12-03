@@ -1,4 +1,4 @@
-import { appStore } from "./TableControlsAsync";
+import { appStore } from "./3.TableControlsAsync";
 
 
 beforeEach(() => {

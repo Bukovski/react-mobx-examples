@@ -2,13 +2,13 @@ import React from 'react';
 import { configure } from 'mobx';
 import { Provider } from "mobx-react";
 
-import { Counter, counterState } from "./Counter";
-import { NameCounter, nameStore } from "./NameCounter";
-import { appStore, Controls, TableControls } from "./TableControlsAsync";
-import { AnimalCounter, giraffe } from "./AnimalAutorun";
-import { BooksContainer, booksStore } from "./BookInject";
-import { Birds, singletonBird } from "./BirdInject";
-import { Home, store, StoreProvider, Username } from "./StoreContext";
+import { Counter, counterState } from "./1.Counter";
+import { NameCounter, nameStore } from "./2.NameCounter";
+import { appStore, Controls, TableControls } from "./3.TableControlsAsync";
+import { AnimalCounter, giraffe } from "./4.AnimalAutorun";
+import { BooksContainer, booksStore } from "./5.BookInject";
+import { Birds, singletonBird } from "./5.BirdInject";
+import { Home, store, StoreProvider, Username } from "./6.StoreContext";
 
 
 configure({ enforceActions: 'observed' });
