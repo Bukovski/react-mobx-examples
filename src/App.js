@@ -3,6 +3,7 @@ import { configure } from 'mobx';
 import { Provider } from "mobx-react";
 
 import { Counter, counterState } from "./1.Counter";
+import TodoComponent from "./1.HelloTwoStore";
 import { NameCounter, nameStore } from "./2.NameCounter";
 import { appStore, Controls, TableControls } from "./3.TableControlsAsync";
 import { AnimalCounter, giraffe } from "./4.AnimalAutorun";
@@ -18,6 +19,7 @@ const App = () => {
   return (
     <div className="app">
       <Counter store={ counterState } />
+      <TodoComponent />
       <NameCounter name={ nameStore } />
   
       <hr/>
