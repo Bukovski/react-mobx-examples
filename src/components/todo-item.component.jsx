@@ -16,22 +16,24 @@ export const TodoItem = (props) => {
 		<div className="todo-item">
 			{
 				edit
-					? <div>
+					? <li className="edit-item">
 						<input
 							type="text"
 							onChange={ (e) => setText(e.target.value) }
 						/>
-						<button onClick={ saveText }>save</button>
-					</div>
-					: <div>
-						<span>{ todo.text }</span>
-						<input
-							type="checkbox"
-							defaultChecked={ todo.isDone }
-						/>
-						<button onClick={ () => setEdit(true) }>edit</button>
-						<button onClick={ () => {} }>X</button>
-					</div>
+						<i className="far fa-save save" onClick={ saveText }/>
+					</li>
+					: <li>
+						<input type="checkbox" id={`todo_${ todo.id }`} defaultChecked={ todo.isDone } />
+						<label htmlFor={`todo_${ todo.id }`}>
+							<span className="check" />
+							{ todo.text }
+						</label>
+						<div className="todo-buttons">
+							<i className="far fa-edit edit" onClick={ () => setEdit(true) }/>
+							<i className="far fa-trash-alt delete" onClick={ () => {} }/>
+						</div>
+					</li>
 			}
 		</div>
 	)

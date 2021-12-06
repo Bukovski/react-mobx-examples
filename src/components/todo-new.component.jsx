@@ -9,13 +9,19 @@ export const TodoNew = () => {
 	};
 	
 	return (
-		<div className="todo-new">
+		<div className="add">
 			<input
 				type="text"
+				name="add"
+				placeholder="Add item..."
 				value={ todo }
 				onChange={ (e) => setTodo(e.target.value) }
 			/>
-			<button onClick={ addTodo }>Add Todo</button>
+				<div className="input-buttons" onClick={ addTodo }>
+					<button className="add-todo">
+						<i className="fas fa-plus add plus-icon"/>
+					</button>
+				</div>
 		</div>
 	)
 };

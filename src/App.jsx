@@ -3,16 +3,16 @@ import React from 'react';
 import Examples from "./mini-examples/examples.container";
 import { TodoNew, TodoList } from "./components";
 
-import './App.css';
-
 
 const App = () => {
   return (
-    <div className="app">
-      {/*<Examples />*/}
+    <div className="App">
+      <Examples />
       
-      <TodoNew />
-      <TodoList />
+      <div className="todoList">
+        <TodoNew />
+        <TodoList />
+      </div>
     </div>
   );
 }

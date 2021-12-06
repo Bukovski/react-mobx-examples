@@ -11,22 +11,22 @@ const todoList = [
 export const TodoList = () => {
 	return (
 		<div className="todo-list">
-			<div className="open-todos">
+			<ul className="open-todos todos align">
 				<span>Open Todos</span>
 				{
 					todoList.map(todo =>
 						<TodoItem key={`${ todo.id }-${ todo.text }`} todo={ todo } />
 					)
 				}
-			</div>
-			<div className="finished-todos">
+			</ul>
+			<ul className="finished-todos todos align">
 				<span>Finished Todos</span>
 				{
 					todoList.map(todo =>
 						<TodoItem key={`${ todo.id }-${ todo.text }`} todo={ todo } />
 					)
 				}
-			</div>
+			</ul>
 		</div>
 	)
 };
