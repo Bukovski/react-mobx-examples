@@ -2,20 +2,20 @@ import React from 'react';
 import { configure } from 'mobx';
 import { Provider } from "mobx-react";
 
-import { Counter, counterState } from "./1.Counter";
-import TodoComponent from "./1.HelloTwoStore";
-import { NameCounter, nameStore } from "./2.NameCounter";
-import { appStore, Controls, TableControls } from "./3.TableControlsAsync";
-import { AnimalCounter, giraffe } from "./4.AnimalAutorun";
-import { BooksContainer, booksStore } from "./5.BookInject";
-import { Birds, singletonBird } from "./5.BirdInject";
-import { Home, store, StoreProvider, Username } from "./6.StoreContext";
+import { Counter, counterState } from "../mini-examples/1.Counter";
+import TodoComponent from "../mini-examples/1.HelloTwoStore";
+import { NameCounter, nameStore } from "../mini-examples/2.NameCounter";
+import { appStore, Controls, TableControls } from "../mini-examples/3.TableControlsAsync";
+import { AnimalCounter, giraffe } from "../mini-examples/4.AnimalAutorun";
+import { BooksContainer, booksStore } from "../mini-examples/5.BookInject";
+import { Birds, singletonBird } from "../mini-examples/5.BirdInject";
+import { Home, store, StoreProvider, Username } from "../mini-examples/6.StoreContext";
 
 
 configure({ enforceActions: 'observed' });
 
 
-const Examples = () => {
+const ExamplesContainer = () => {
 	return (
 		<div className="examples">
 			<Counter store={ counterState } />
@@ -56,4 +56,4 @@ const Examples = () => {
 }
 
 
-export default Examples;
+export default ExamplesContainer;
