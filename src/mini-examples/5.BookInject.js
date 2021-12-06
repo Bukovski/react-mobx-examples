@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { action, makeAutoObservable, makeObservable, observable } from 'mobx';
+import { action, makeObservable, observable } from 'mobx';
 import { inject, observer } from "mobx-react";
 
 
