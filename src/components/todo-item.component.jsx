@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
+import { useStore, onEnterPress } from "../helpers";
 
 
 export const TodoItem = (props) => {
 	const { todo } = props;
 	
+	// const todoListStore = useStore();
+	
 	const [ text, setText ] = useState('');
 	const [ edit, setEdit ] = useState(false);
 	
 	const saveText = () => {
+		todo.updateText(text);
+		
 		setEdit(false);
 		setText('');
 	};
@@ -19,12 +24,18 @@ export const TodoItem = (props) => {
 					? <li className="edit-item">
 						<input
 							type="text"
-							onChange={ (e) => setText(e.target.value) }
+							onKeyDown={ onEnterPress(saveText) }
+							onChange={ (event) => setText(event.target.value) }
 						/>
 						<i className="far fa-save save" onClick={ saveText }/>
 					</li>
 					: <li>
-						<input type="checkbox" id={`todo_${ todo.id }`} defaultChecked={ todo.isDone } />
+						<input
+							type="checkbox"
+							id={`todo_${ todo.id }`}
+							defaultChecked={ todo.isDone }
+							onChange={ todo.toggleIsDone }
+						/>
 						<label htmlFor={`todo_${ todo.id }`}>
 							<span className="check" />
 							{ todo.text }
