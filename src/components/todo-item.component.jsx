@@ -5,7 +5,7 @@ import { useStore, onEnterPress } from "../helpers";
 export const TodoItem = (props) => {
 	const { todo } = props;
 	
-	// const todoListStore = useStore();
+	const todoListStore = useStore();
 	
 	const [ text, setText ] = useState('');
 	const [ edit, setEdit ] = useState(false);
@@ -42,7 +42,7 @@ export const TodoItem = (props) => {
 						</label>
 						<div className="todo-buttons">
 							<i className="far fa-edit edit" onClick={ () => setEdit(true) }/>
-							<i className="far fa-trash-alt delete" onClick={ () => {} }/>
+							<i className="far fa-trash-alt delete" onClick={ () => todoListStore.removeTodo(todo) }/>
 						</div>
 					</li>
 			}
