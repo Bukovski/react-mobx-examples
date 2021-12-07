@@ -2,7 +2,7 @@ import React from 'react';
 
 import { TodoNew, TodoList } from "../components";
 
-import { StoreProvider } from "../helpers/store-context.helper";
+import { StoreProvider } from "../helpers";
 import TodoListStore from "../store/todo-list.store";
 
 
@@ -12,7 +12,8 @@ const todoListStore = new TodoListStore([
 	"Should Writing in React",
 	"Should Learn Redux",
 	"Should Learn MobX",
-	"Should Watch 'Blade Runner 2049'"
+	"Should Watch 'Blade Runner 2049'",
+	"Should Play on 'Stronghold'"
 ]);
 
 const TodoContainer = () => {
