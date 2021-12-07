@@ -7,14 +7,17 @@ export const TodoItem = (props) => {
 	
 	const todoListStore = useStore();
 	
-	const [ text, setText ] = useState('');
+	const initText = todo.text || "";
+	
+	const [ text, setText ] = useState(initText);
 	const [ edit, setEdit ] = useState(false);
+	
+	const handleChange = (event) => setText(event.target.value)
 	
 	const saveText = () => {
 		todo.updateText(text);
 		
 		setEdit(false);
-		setText('');
 	};
 	
 	return (
@@ -25,7 +28,8 @@ export const TodoItem = (props) => {
 						<input
 							type="text"
 							onKeyDown={ onEnterPress(saveText) }
-							onChange={ (event) => setText(event.target.value) }
+							onChange={ handleChange }
+							defaultValue={ text }
 						/>
 						<i className="far fa-save save" onClick={ saveText }/>
 					</li>

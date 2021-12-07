@@ -1,5 +1,5 @@
 import { action, makeObservable, observable } from "mobx";
-import { randomId } from "../helpers/random-id.helper";
+import { randomId } from "../helpers";
 
 
 export default class TodoItemStore {
