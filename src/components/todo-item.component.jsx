@@ -7,9 +7,7 @@ export const TodoItem = (props) => {
 	
 	const todoListStore = useStore();
 	
-	const initText = todo.text || "";
-	
-	const [ text, setText ] = useState(initText);
+	const [ text, setText ] = useState(todo.text);
 	const [ edit, setEdit ] = useState(false);
 	
 	const handleChange = (event) => setText(event.target.value)
