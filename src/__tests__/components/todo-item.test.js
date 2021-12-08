@@ -1,7 +1,7 @@
 import React from "react";
 import { fireEvent, render, screen } from "@testing-library/react";
-import { TodoItem, TodoList, TodoNew } from "../../components";
 import userEvent from "@testing-library/user-event";
+import { TodoItem } from "../../components";
 import { StoreProvider } from "../../helpers";
 
 
@@ -50,5 +50,12 @@ describe("TodoItem", () => {
 		
 		userEvent.click(container.querySelector('i.save'));
 		expect(mockUpdateText).toHaveBeenCalledTimes(1);
+		
+		userEvent.click(container.querySelector('i.edit'));
+		userEvent.type(screen.getByRole("textbox"), " if press enter");
+		expect(screen.getByRole("textbox")).toHaveValue("Should be text new text if press enter")
+		
+		userEvent.type(screen.getByRole("textbox"), '{enter}')
+		expect(mockUpdateText).toHaveBeenCalledTimes(2);
 	});
 })
