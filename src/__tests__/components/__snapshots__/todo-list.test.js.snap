@@ -1,0 +1,107 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoList render page with provider props 1`] = `
+<div
+  class="todo-list"
+>
+  <ul
+    class="open-todos todos align"
+  >
+    <span>
+      Open Todos
+    </span>
+    <div
+      class="todo-item"
+    >
+      <li>
+        <input
+          id="todo_1"
+          type="checkbox"
+        />
+        <label
+          for="todo_1"
+        >
+          <span
+            class="check"
+          />
+          React
+        </label>
+        <div
+          class="todo-buttons"
+        >
+          <i
+            class="far fa-edit edit"
+          />
+          <i
+            class="far fa-trash-alt delete"
+          />
+        </div>
+      </li>
+    </div>
+    <div
+      class="todo-item"
+    >
+      <li>
+        <input
+          id="todo_3"
+          type="checkbox"
+        />
+        <label
+          for="todo_3"
+        >
+          <span
+            class="check"
+          />
+          MobX
+        </label>
+        <div
+          class="todo-buttons"
+        >
+          <i
+            class="far fa-edit edit"
+          />
+          <i
+            class="far fa-trash-alt delete"
+          />
+        </div>
+      </li>
+    </div>
+  </ul>
+  <ul
+    class="finished-todos todos align"
+  >
+    <span>
+      Finished Todos
+    </span>
+    <div
+      class="todo-item"
+    >
+      <li>
+        <input
+          checked=""
+          id="todo_2"
+          type="checkbox"
+        />
+        <label
+          for="todo_2"
+        >
+          <span
+            class="check"
+          />
+          Redux
+        </label>
+        <div
+          class="todo-buttons"
+        >
+          <i
+            class="far fa-edit edit"
+          />
+          <i
+            class="far fa-trash-alt delete"
+          />
+        </div>
+      </li>
+    </div>
+  </ul>
+</div>
+`;
