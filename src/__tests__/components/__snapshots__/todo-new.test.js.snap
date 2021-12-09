@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoNew add new text to field and save 1`] = `
+<div
+  class="add"
+>
+  <input
+    name="add"
+    placeholder="Add item..."
+    type="text"
+    value=""
+  />
+  <div
+    class="input-buttons"
+  >
+    <button
+      class="add-todo"
+    >
+      <i
+        class="fas fa-plus add plus-icon"
+      />
+    </button>
+  </div>
+</div>
+`;
