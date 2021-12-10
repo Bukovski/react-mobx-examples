@@ -20,4 +20,19 @@ Small code examples for working with mobx
 * All inputs respond to the Enter button to save the data.
 
 
+## Folder Tree
+
+```
+|–– src
+|  |–– components
+|  |–– containers
+|  |–– helpers
+|  |–– mini-examples
+|  |–– store
+|  |–– __tests__
+|  |  |–– components
+|  |  |  |–– __snapshots__
+|  |  |–– store
+```
+
 ![todo-list](./todo-list.jpg)
